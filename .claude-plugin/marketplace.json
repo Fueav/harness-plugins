@@ -1,0 +1,48 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "fueav-harness",
+  "description": "Umbrella marketplace for the Fueav Harness plugin family. Each plugin is released independently from its own source repository.",
+  "owner": {
+    "name": "Fueav"
+  },
+  "plugins": [
+    {
+      "name": "harness-driven-development",
+      "description": "Routes repository work through the repository's declared Harness workflow and release gates.",
+      "author": {
+        "name": "Fueav"
+      },
+      "homepage": "https://github.com/Fueav/harness-driven-development",
+      "category": "development",
+      "tags": [
+        "harness",
+        "specification",
+        "release-gates"
+      ],
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Fueav/harness-driven-development.git",
+        "path": "plugins/harness-driven-development"
+      }
+    },
+    {
+      "name": "harness-template-sync",
+      "description": "Migrates and governs Harness architecture while preserving project-owned context and extensions.",
+      "author": {
+        "name": "Fueav"
+      },
+      "homepage": "https://github.com/Fueav/harness-template-sync",
+      "category": "development",
+      "tags": [
+        "harness",
+        "migration",
+        "governance"
+      ],
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Fueav/harness-template-sync.git",
+        "path": "plugins/harness-template-sync"
+      }
+    }
+  ]
+}

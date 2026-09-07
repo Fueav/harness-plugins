@@ -5,7 +5,7 @@
 | Plugin | Source repository | Role |
 | --- | --- | --- |
 | `harness-driven-development` | [`Fueav/harness-driven-development`](https://github.com/Fueav/harness-driven-development) | Routes product work through the repository's declared Harness workflow and release gates. |
-| `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Bootstraps, adopts, refreshes, and governs Harness architecture against `ai-first-go-template`. |
+| `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, proves readiness, then exits. |
 
 Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. The two plugins do not call or install each other.
 

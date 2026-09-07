@@ -27,7 +27,7 @@
     },
     {
       "name": "harness-template-sync",
-      "description": "Migrates and governs Harness architecture while preserving project-owned context and extensions.",
+      "description": "Delivers the canonical scaffold into one target while preserving project-owned contracts.",
       "author": {
         "name": "Fueav"
       },
@@ -35,8 +35,8 @@
       "category": "development",
       "tags": [
         "harness",
-        "migration",
-        "governance"
+        "template",
+        "delivery"
       ],
       "source": {
         "source": "git-subdir",

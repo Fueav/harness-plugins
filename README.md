@@ -69,7 +69,7 @@ Plugin entries intentionally omit `ref`, so each plugin follows its source repos
 
 ```bash
 codex plugin marketplace upgrade fueav-harness
-claude plugin marketplace update fueav-harness --scope user
+claude plugin marketplace update fueav-harness
 ```
 
 ## Verify a source checkout

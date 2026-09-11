@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "harness-driven-development",
-      "description": "Routes repository work through the repository's declared Harness workflow and release gates.",
+      "description": "Optional explicit compatibility entry for repository-native daily work.",
       "author": {
         "name": "Fueav"
       },

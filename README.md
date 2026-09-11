@@ -4,7 +4,7 @@
 
 | Plugin | Source repository | Role |
 | --- | --- | --- |
-| `harness-driven-development` | [`Fueav/harness-driven-development`](https://github.com/Fueav/harness-driven-development) | Routes product work through the repository's declared Harness workflow and release gates. |
+| `harness-driven-development` | [`Fueav/harness-driven-development`](https://github.com/Fueav/harness-driven-development) | Optional explicit compatibility entry; daily work uses repository commands directly. |
 | `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, proves readiness, then exits. |
 
 Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. The two plugins do not call or install each other.
@@ -27,7 +27,7 @@ claude plugin install harness-driven-development@fueav-harness --scope user
 claude plugin install harness-template-sync@fueav-harness --scope user
 ```
 
-Restart the client or open a new session after installing.
+Install only the plugin needed for the operation. The daily compatibility entry is optional. Restart the client or open a new session after installing.
 
 On a freshly added marketplace, the first `codex plugin list` can render `fueav-harness` with no plugin table while the remote sources are still being resolved. Run `codex plugin add` anyway; subsequent listings show both plugins with their resolved source repositories.
 

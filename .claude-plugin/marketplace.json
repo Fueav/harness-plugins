@@ -1,7 +1,5 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "fueav-harness",
-  "description": "Umbrella marketplace for the Fueav Harness plugin family. Each plugin is released independently from its own source repository.",
   "owner": {
     "name": "Fueav"
   },
@@ -44,5 +42,8 @@
         "path": "plugins/harness-template-sync"
       }
     }
-  ]
+  ],
+  "metadata": {
+    "description": "Umbrella marketplace for the Fueav Harness plugin family. Each plugin is released independently from its own source repository."
+  }
 }

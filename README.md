@@ -1,6 +1,6 @@
 # Fueav Harness Plugins
 
-`fueav-harness` is an umbrella marketplace for the Fueav Harness plugin family. It is a client-agnostic index only: it contains no Skill, no script, and no vendored plugin source.
+`fueav-harness` is an umbrella marketplace for the Fueav Harness plugin family. It is a client-agnostic index only: it contains no Skill or vendored plugin source.
 
 | Plugin | Source repository | Role |
 | --- | --- | --- |
@@ -77,7 +77,7 @@ claude plugin marketplace update fueav-harness
 ```bash
 python3 scripts/test_verify_release.py
 python3 scripts/verify_release.py
-claude plugin validate . --strict
+claude plugin validate .claude-plugin/marketplace.json
 ```
 
 `verify_release.py` enforces the invariants this repository owns: both manifests declare the same marketplace name, the same plugin set, and byte-identical sources including `ref`; the marketplace name never equals a plugin name; and the repository vendors no plugin source and ships no Skill.

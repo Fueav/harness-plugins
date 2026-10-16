@@ -5,25 +5,6 @@
   },
   "plugins": [
     {
-      "name": "harness-driven-development",
-      "description": "Optional explicit compatibility entry for repository-native daily work.",
-      "author": {
-        "name": "Fueav"
-      },
-      "homepage": "https://github.com/Fueav/harness-driven-development",
-      "category": "development",
-      "tags": [
-        "harness",
-        "specification",
-        "release-gates"
-      ],
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/Fueav/harness-driven-development.git",
-        "path": "plugins/harness-driven-development"
-      }
-    },
-    {
       "name": "harness-template-sync",
       "description": "Delivers the canonical scaffold into one target while preserving project-owned contracts.",
       "author": {

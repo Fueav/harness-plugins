@@ -13,7 +13,6 @@ MARKETPLACE_NAME = "fueav-harness"
 CODEX_MANIFEST = Path(".agents/plugins/marketplace.json")
 CLAUDE_MANIFEST = Path(".claude-plugin/marketplace.json")
 EXPECTED_PLUGINS = {
-    "harness-driven-development": "https://github.com/Fueav/harness-driven-development.git",
     "harness-template-sync": "https://github.com/Fueav/harness-template-sync.git",
 }
 

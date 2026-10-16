@@ -4,10 +4,9 @@
 
 | Plugin | Source repository | Role |
 | --- | --- | --- |
-| `harness-driven-development` | [`Fueav/harness-driven-development`](https://github.com/Fueav/harness-driven-development) | Optional explicit compatibility entry; daily work uses repository commands directly. |
-| `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, proves readiness, then exits. |
+| `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, verifies the migrated candidate, then exits. |
 
-Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. The two plugins do not call or install each other.
+Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. Daily work uses native project commands and the pinned engine.
 
 ## Install
 
@@ -15,7 +14,6 @@ Codex:
 
 ```bash
 codex plugin marketplace add Fueav/harness-plugins
-codex plugin add harness-driven-development@fueav-harness
 codex plugin add harness-template-sync@fueav-harness
 ```
 
@@ -23,43 +21,36 @@ Claude Code:
 
 ```bash
 claude plugin marketplace add Fueav/harness-plugins --scope user
-claude plugin install harness-driven-development@fueav-harness --scope user
 claude plugin install harness-template-sync@fueav-harness --scope user
 ```
 
-Install only the plugin needed for the operation. The daily compatibility entry is optional. Restart the client or open a new session after installing.
+Install only the plugin needed for the operation. The previous daily compatibility entry is retired from this distribution; existing pinned installations can remain on their old release. Restart the client or open a new session after installing.
 
-On a freshly added marketplace, the first `codex plugin list` can render `fueav-harness` with no plugin table while the remote sources are still being resolved. Run `codex plugin add` anyway; subsequent listings show both plugins with their resolved source repositories.
+On a freshly added marketplace, the first `codex plugin list` can render `fueav-harness` with no plugin table while the remote sources are still being resolved. Run `codex plugin add` anyway; subsequent listings show the delivery plugin with its resolved source repository.
 
 ## Migrate from the per-repository marketplaces
 
-The umbrella marketplace declares different install coordinates, so an existing installation must be removed before it is added again. Skill behavior and plugin names are unchanged.
+The umbrella marketplace declares different install coordinates, so an existing installation must be removed before it is added again. The v4 delivery plugin migrates execution contracts; this marketplace does not alter existing installed plugins.
 
 Codex:
 
 ```bash
-codex plugin remove harness-driven-development@fueav-harness-development
 codex plugin remove harness-template-sync@fueav-harness-sync
-codex plugin marketplace remove fueav-harness-development
 codex plugin marketplace remove fueav-harness-sync
 codex plugin marketplace add Fueav/harness-plugins
-codex plugin add harness-driven-development@fueav-harness
 codex plugin add harness-template-sync@fueav-harness
 ```
 
 Claude Code:
 
 ```bash
-claude plugin uninstall harness-driven-development@fueav-harness-development --scope user
 claude plugin uninstall harness-template-sync@fueav-harness-sync --scope user
-claude plugin marketplace remove fueav-harness-development --scope user
 claude plugin marketplace remove fueav-harness-sync --scope user
 claude plugin marketplace add Fueav/harness-plugins --scope user
-claude plugin install harness-driven-development@fueav-harness --scope user
 claude plugin install harness-template-sync@fueav-harness --scope user
 ```
 
-The per-repository marketplaces remain published and supported. Installing a plugin from both this marketplace and its own marketplace at the same time is not supported; choose one coordinate per plugin.
+Existing per-repository releases remain available for pinned consumers. Installing a plugin from both this marketplace and its own marketplace at the same time is not supported; choose one coordinate per plugin.
 
 ## Version policy
 

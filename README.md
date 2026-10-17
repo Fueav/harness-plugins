@@ -1,12 +1,12 @@
 # Fueav Harness Plugins
 
-`fueav-harness` is an umbrella marketplace for the Fueav Harness plugin family. It is a client-agnostic index only: it contains no Skill or vendored plugin source.
+`fueav-harness` is an umbrella marketplace for one explicit template migration plugin. It is a client-agnostic index only: it contains no Skill or vendored plugin source.
 
 | Plugin | Source repository | Role |
 | --- | --- | --- |
-| `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, verifies the migrated candidate, then exits. |
+| `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, checks migration structure and native project results, then exits. |
 
-Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. Daily work uses native project commands and the pinned engine.
+Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. Daily work uses native project commands and independent project acceptance.
 
 ## Install
 
@@ -30,7 +30,7 @@ On a freshly added marketplace, the first `codex plugin list` can render `fueav-
 
 ## Migrate from the per-repository marketplaces
 
-The umbrella marketplace declares different install coordinates, so an existing installation must be removed before it is added again. The v4 delivery plugin migrates execution contracts; this marketplace does not alter existing installed plugins.
+The umbrella marketplace declares different install coordinates, so an existing installation must be removed before it is added again. The delivery plugin migrates targets to native execution; this marketplace does not alter existing installed plugins.
 
 Codex:
 

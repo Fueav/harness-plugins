@@ -25,6 +25,6 @@
     }
   ],
   "metadata": {
-    "description": "Umbrella marketplace for the Fueav Harness plugin family. Each plugin is released independently from its own source repository."
+    "description": "Index for the independently released template migration plugin; no daily execution runtime."
   }
 }

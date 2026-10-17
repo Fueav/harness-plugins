@@ -26,11 +26,11 @@ Install only the plugin needed for the operation. The previous daily compatibili
 
 ## Migrate from the per-repository marketplaces
 
-The umbrella marketplace declares different install coordinates, so an existing installation must be removed before it is added again. The delivery plugin migrates targets to native execution; this marketplace does not alter existing installed plugins.
-
 Codex:
 
 ```bash
+codex plugin remove harness-driven-development@fueav-harness-development
+codex plugin marketplace remove fueav-harness-development
 codex plugin remove harness-template-sync@fueav-harness-sync
 codex plugin marketplace remove fueav-harness-sync
 codex plugin marketplace add Fueav/harness-plugins
@@ -40,13 +40,13 @@ codex plugin add harness-template-sync@fueav-harness
 Claude Code:
 
 ```bash
+claude plugin uninstall harness-driven-development@fueav-harness-development --scope user
+claude plugin marketplace remove fueav-harness-development --scope user
 claude plugin uninstall harness-template-sync@fueav-harness-sync --scope user
 claude plugin marketplace remove fueav-harness-sync --scope user
 claude plugin marketplace add Fueav/harness-plugins --scope user
 claude plugin install harness-template-sync@fueav-harness --scope user
 ```
-
-Existing per-repository releases remain available for pinned consumers. Installing a plugin from both this marketplace and its own marketplace at the same time is not supported; choose one coordinate per plugin.
 
 ## Version policy
 

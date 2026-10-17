@@ -6,8 +6,6 @@
 | --- | --- | --- |
 | `harness-template-sync` | [`Fueav/harness-template-sync`](https://github.com/Fueav/harness-template-sync) | Delivers one bootstrap or explicit upgrade from the canonical Scaffold Source, checks migration structure and native project results, then exits. |
 
-Each plugin keeps its own repository, version, release tags, evals, and release gates. This marketplace resolves plugin sources remotely, so nothing here duplicates a plugin's source of truth. Daily work uses native project commands and independent project acceptance.
-
 ## Install
 
 Codex:
@@ -24,9 +22,7 @@ claude plugin marketplace add Fueav/harness-plugins --scope user
 claude plugin install harness-template-sync@fueav-harness --scope user
 ```
 
-Install only the plugin needed for the operation. The previous daily compatibility entry is retired from this distribution; existing pinned installations can remain on their old release. Restart the client or open a new session after installing.
-
-On a freshly added marketplace, the first `codex plugin list` can render `fueav-harness` with no plugin table while the remote sources are still being resolved. Run `codex plugin add` anyway; subsequent listings show the delivery plugin with its resolved source repository.
+Install only the plugin needed for the operation. The previous daily compatibility entry is retired; uninstall it when upgrading an existing installation. Restart the client or open a new session after installing.
 
 ## Migrate from the per-repository marketplaces
 
@@ -59,8 +55,12 @@ Plugin entries intentionally omit `ref`, so each plugin follows its source repos
 ## Upgrade
 
 ```bash
+codex plugin remove harness-driven-development@fueav-harness
 codex plugin marketplace upgrade fueav-harness
+codex plugin add harness-template-sync@fueav-harness
+claude plugin uninstall harness-driven-development@fueav-harness --scope user
 claude plugin marketplace update fueav-harness
+claude plugin update harness-template-sync@fueav-harness
 ```
 
 ## Verify a source checkout

@@ -1,0 +1,24 @@
+name: Marketplace checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - name: Marketplace validator regression tests
+        run: python3 scripts/test_verify_release.py
+      - name: Marketplace contract
+        run: python3 scripts/verify_release.py
